@@ -15,12 +15,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </style>
 </head>
 <body>
+  
+<audio controls>
+  <source src="Minecraft theme song (5 Minutes)" type="audio/mpeg">
+</audio>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Overview</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">New Years Countdown</a>
     
   </div>
 
@@ -126,12 +131,102 @@ Start private conversations with your employees without having to text, email, o
       Q:How do I check my timesheet?<br>
       A:If you’re a Attendance Tracker user you can check your timesheet by opening the app,           navigating to the Attendance tab, and select the pay period you would like to view.
       
+      <h2>Similar products</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NpPrEWdnofU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!-- SOCIAL PANEL HTML -->
+<div class="social-panel-container">
+	<div class="social-panel">
+		<p>Created with <i class="fa fa-heart"></i> by
+			<a target="_blank" href="https://florin-pop.com">Florin Pop</a></p>
+		<button class="close-btn"><i class="fas fa-times"></i></button>
+		<h4>Get in touch on</h4>
+		<ul>
+			<li>
+				<a href="https://www.patreon.com/florinpop17" target="_blank">
+					<i class="fab fa-discord"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/florinpop1705" target="_blank">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://linkedin.com/in/florinpop17" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://facebook.com/florinpop17" target="_blank">
+					<i class="fab fa-facebook"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://instagram.com/florinpop17" target="_blank">
+					<i class="fab fa-instagram"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<button class="floating-btn">
+	Get in Touch
+</button>
+
+<div class="floating-text">
+	<a href="https://florin-pop.com/blog/2019/09/100-days-100-projects" target="_blank">Attendance Tracker</a>
+</div>
+      
+      
 </h1>
 </div>
-
 <!-- Footer -->
+  <title>Track your Employee's Time</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.png">
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
  </div>
+  <h4 class="heading">
+    Track your Employee's Time
+  </h4>
+  <div class="clock">
+    <div class="hour">
+      <div class="hr" id="hr"></div>
+    </div>
+    <div class="min">
+      <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec">
+      <div class="sc" id="sc"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const deg = 6;
+    // getting all hands of clock from html through id
+    const hr = document.querySelector('#hr')
+    const mn = document.querySelector('#mn');
+    const sc = document.querySelector('#sc');
+
+    setInterval(() => {
+      let day = new Date();
+
+      //setting the actual seconds minutes and hour in clock
+
+      let ms = day.getMilliseconds() * deg;
+      let hh = day.getHours() * 30;
+      let mm = day.getMinutes() * deg;
+      let ss = day.getSeconds() * deg + ms / 1000;
+
+      //changing the degrees in the style as per the time
+
+      hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+      mn.style.transform = `rotateZ(${mm}deg)`;
+      sc.style.transform = `rotateZ(${ss}deg)`;
+
+    }, 1);
+  </script>
 </footer>
 </body>
 </html>
